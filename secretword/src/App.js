@@ -72,7 +72,31 @@ function App() {
 
   // Process the letter input
   const verifyLetter = (letter) =>{
-    console.log(letter);
+    
+    const normalizedLetter = letter.toLowerCase();
+
+    // check if letter has already benn utilized
+    if(
+      guessedLetters.includes(normalizedLetter) || 
+      wrongLetters.includes(normalizedLetter))
+    {
+      return;
+    }
+
+    // pusjh guessed letter or remove a guess
+
+    if(letter.includes(normalizedLetter)){
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        normalizedLetter
+      ])
+    }else{
+      setGuessedLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalizedLetter,
+      ]);
+    }
+
   } 
 
   // Reestart the game

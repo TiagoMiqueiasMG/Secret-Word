@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import './Game.css'
 
@@ -14,6 +14,7 @@ const Game = ({
 }) => {
 
   const [letter, setLetter] = useState("");
+  const letterInputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +22,8 @@ const Game = ({
     verifyLetter(letter);
 
     setLetter("");
+
+    letterInputRef.current.focus();
   }
 
   return (
@@ -53,6 +56,7 @@ const Game = ({
             maxLength="1" 
             required onChange={(e) => setLetter(e.target.value)}
             value={letter}
+            ref={letterInputRef}
           />
           <button>Jogar</button>
         </form>
