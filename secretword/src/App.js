@@ -17,9 +17,13 @@ const stages = [
 ]
 
 function App() {
+
+  const [gameStage, setGameStage] = useState(stages[0].name);
+  
+
   return (
     <div className="App">
-      <StartScreen/>
+      {gameStage === 'start' && <StartScreen/>}
     </div>
   );
 }
