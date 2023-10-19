@@ -33,9 +33,12 @@ function App() {
     const categories = Object.keys(words);
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)];
 
-    //  
+    //  pick a random word
+    const word =
+      words[category][Math.floor(Math.random() * words[category].length)];
 
-    console.log(category);
+
+    console.log(category, word);
   }
 
   // starts the secret word game
@@ -58,7 +61,7 @@ function App() {
     setGameStage(stages[0].name)
   }
 
-  console.log(words);
+  
 
   return (
     <div className="App">
