@@ -19,6 +19,8 @@ const Game = ({
     e.preventDefault();
 
     verifyLetter(letter);
+
+    setLetter("");
   }
 
   return (
