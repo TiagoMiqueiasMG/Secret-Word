@@ -1,4 +1,4 @@
-const wordList = {
+const wordsList = {
   carro: ["Uno", "Gol", "Ferrari", "Pneu", "Capô"],
   filmes: ["Matrix", "Pulp Fiction", "Cidadão Kane", "Avatar", "E.T."],
   cores: ["Azul", "Vermelho", "Verde", "Amarelo", "Roxo"],
