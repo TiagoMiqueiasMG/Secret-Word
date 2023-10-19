@@ -44,11 +44,20 @@ function App() {
 
   // starts the secret word game
   // [1] === position list
+
   const startGame = () => {
     // pick word and pick category
     const {word,category} = pickWordAndCategory();
 
+    // create an array of letters
+    let wordLetters = word.split("");
+
+    wordLetters = wordLetters.map((l) => l.toLowerCase() )
+
     console.log(word, category)
+    console.log(wordLetters);
+
+    // 
 
     setGameStage(stages[1].name)
   };
@@ -62,8 +71,7 @@ function App() {
   const retry = () =>{
     setGameStage(stages[0].name)
   }
-
-  
+ 
 
   return (
     <div className="App">
