@@ -15,6 +15,12 @@ const Game = ({
 
   const [letter, setLetter] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    verifyLetter(letter);
+  }
+
   return (
     <div className="game">
       <p className="points">
@@ -38,7 +44,7 @@ const Game = ({
       </div>
       <div className="letterContainer">
         <p>Tente adivinhar uma letra da palavra:</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input 
             type="text" 
             name="letter" 
