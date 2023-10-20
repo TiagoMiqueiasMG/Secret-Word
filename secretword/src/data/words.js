@@ -4,9 +4,8 @@ export const wordsList = {
   cores: ["Azul", "Vermelho", "Verde", "Amarelo", "Roxo"],
   animais: ["Elefante", "Pinguim", "Girafa", "Tigre", "Borboleta"],
   comida: ["Pizza", "Sushi", "Chocolate", "Salada", "Hamburguer"],
-  cidades: ["Nova York", "Paris", "Belo Horizonte", "Roma", "Sydney", "Rio acima"],
-  programacao: ["JavaScript", "Python", "Java", "C", "HTML"],
+  cidades: ["Nova York", "Paris", "Belo Horizonte", "Roma", "Sydney", "Rio acima"],  
   esportes: ["Futebol", "Basquete", "Tênis", "Surfe", "Esqui"],
-  instrumentos: ["Guitarra", "Piano", "Violino", "Bateria", "Saxofone"],
+  instrumentos: ["Guitarra", "Piano", "Violino", "Bateria", "Saxofone", "Piano"],
   profissoes: ["Programador", "Engenheiro", "Artista", "Advogado", "Professor"],
 };
