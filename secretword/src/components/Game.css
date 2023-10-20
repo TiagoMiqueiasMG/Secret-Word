@@ -15,8 +15,8 @@
 }
 
 .letter, .blankSquare {
-    font-size: clamp(2.5vw, 70px, 5vw);
-    line-height: 1.5;
+    font-size: clamp(5vw, 70px, 7vw);
+    line-height: 2;
     border: 0.3vw solid #000;
     height: 10vw;
     width: 10vw;
@@ -45,6 +45,14 @@
 }
 
 span{
-    color: red;
+    color: rgb(250, 219, 47);
     text-transform: uppercase;
+}
+
+.wrongLettersContainer p{
+    font-size: clamp(0.5em, 2em, 2.5vw); ;
+}
+
+.wrongLettersContainer{
+    font-size: clamp(0.2em, 2em, 2.5vw); ;
 }
