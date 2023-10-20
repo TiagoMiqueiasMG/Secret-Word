@@ -46,17 +46,17 @@ function App() {
   // starts the secret word game
   // [1] === position list
 
-  const startGame = () => {
+  const startGame = useCallback(() => {
+    // clear all letters
+    clearLettersStates();
+
     // pick word and pick category
     const {word,category} = pickWordAndCategory();
 
     // create an array of letters
     let wordLetters = word.split("");
 
-    wordLetters = wordLetters.map((l) => l.toLowerCase() )
-
-    console.log(word, category)
-    console.log(wordLetters);
+    wordLetters = wordLetters.map((l) => l.toLowerCase());
 
     // Fill States
     setPickedWord(word);
@@ -64,7 +64,7 @@ function App() {
     setLetters(wordLetters);
 
     setGameStage(stages[1].name)
-  };
+  },[pickWordAndCategory]);
 
   // Process the letter input
   const verifyLetter = (letter) => {
@@ -91,18 +91,28 @@ function App() {
       ]);
       setGuesses((actualGuesses) => actualGuesses - 1);
     }
-  };
+  };  
 
-  console.log(wrongLetters);
-
-  useEffect(() => {
-    
+  useEffect(() => {    
     if(guesses <= 0){
       // reset all states
       clearLettersStates();
       setGameStage(stages[2].name);
     }
   }, [guesses])
+
+  // check win condition
+  useEffect(() => {
+    const uniqueLetters = [...new Set(letters)];
+
+    // win conditional
+    if (guessedLetters.length === uniqueLetters.length) {
+      // add score
+      setScore((actualScore) => (actualScore += 100));
+      // restart game with new word
+      startGame();
+    }
+  },[guessedLetters, letters, startGame]);
 
   // Reestart the game
   const retry = () =>{
@@ -119,20 +129,20 @@ function App() {
 
   return (
     <div className="App">
-      {gameStage === "start" && <StartScreen startGame = {startGame}/>}
+      {gameStage === "start" && <StartScreen startGame={startGame} />}
       {gameStage === "game" && (
-        <Game 
-          verifyLetter={verifyLetter} 
-          pickedWord={pickedWord} 
-          pickedCategory={pickedCategory} 
-          letters={letters} 
+        <Game
+          verifyLetter={verifyLetter}
+          pickedWord={pickedWord}
+          pickedCategory={pickedCategory}
+          letters={letters}
           guessedLetters={guessedLetters}
           wrongLetters={wrongLetters}
           guesses={guesses}
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver retry={retry}/>}
+      {gameStage === "end" && <GameOver retry={retry} score={score} />}
     </div>
   );
 }
