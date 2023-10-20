@@ -1,5 +1,7 @@
 # Secret-Word
 
+
+
 Projeto desenvolvido em ReactJS, com base do material do curso de React do Zero a maestria(c/hooks, router, API, Projetos) de Mateus Battisti.
 
 ## PARA A EXECUÇÃO DO CÓDIGO EM SUA MÁQUINA
