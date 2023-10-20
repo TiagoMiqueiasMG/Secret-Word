@@ -1,6 +1,6 @@
 # Secret-Word
 
-
+![image](assets/TelaPrincipal.PNG)
 
 Projeto desenvolvido em ReactJS, com base do material do curso de React do Zero a maestria(c/hooks, router, API, Projetos) de Mateus Battisti.
 
@@ -19,3 +19,4 @@ npm start
 
 ## Acesso do aplicativo: 
 É possível acessar o aplicativo diretamente pelo link: https://secret-word-two-sand.vercel.app/
+
