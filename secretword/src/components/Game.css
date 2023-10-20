@@ -15,7 +15,7 @@
 }
 
 .letter, .blankSquare {
-    font-size: clamp(5vw, 70px, 7vw);
+    font-size: clamp(4vw, 6vw, 7vw);
     line-height: 2;
     border: 0.3vw solid #000;
     height: 10vw;
@@ -25,6 +25,7 @@
     color: #000;
     font-weight: bold;
 }
+
 
 .letterContainer p {
     margin-bottom: 1.2em;
