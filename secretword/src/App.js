@@ -14,7 +14,7 @@ const stages = [
   {id:3, name: "end"}
 ];
 
-const guessesQty = 3;
+const guessesQty = 5;
 
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
@@ -39,9 +39,7 @@ function App() {
     // pick a random word
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
-
     console.log(category, word);
-
     return { category, word };
   }, [words]);
 
@@ -91,7 +89,6 @@ function App() {
         ...actualWrongLetters,
         normalizedLetter,
       ]);
-
       setGuesses((actualGuesses) => actualGuesses - 1);
     }
   };
@@ -105,14 +102,12 @@ function App() {
       clearLettersStates();
       setGameStage(stages[2].name);
     }
-
   }, [guesses])
 
   // Reestart the game
   const retry = () =>{
     setScore(0);
     setGuesses(guessesQty);
-
     setGameStage(stages[0].name);
   };
 
@@ -120,7 +115,6 @@ function App() {
      setGuessedLetters([]);
      setWrongLetters([]);
    };
- 
 
 
   return (
