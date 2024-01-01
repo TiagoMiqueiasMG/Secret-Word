@@ -18,5 +18,5 @@ Inicie o servidor de desenvolvimento com o seguinte comando:
 npm start
 
 ## Acesso do aplicativo: 
-É possível acessar o aplicativo diretamente pelo link: https://secret-word-two-sand.vercel.app/
+É possível acessar o aplicativo diretamente pelo link: https://secret-word-snowy.vercel.app/
 
